@@ -28,7 +28,11 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
+<<<<<<< HEAD
 
 
 
+=======
+该系统的管理员账号是admin，密码是123456，会员用户的账号是wp，密码是123456,登陆相应的界面会显示相应模块，暂时不支持其他账号密码登陆
+>>>>>>> 2065de35bf160cc0f851f225a5027aa4617a6c6d
 
