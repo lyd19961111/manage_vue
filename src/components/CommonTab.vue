@@ -21,7 +21,8 @@ import { mapState, mapMutations } from 'vuex'
 export default {
   computed: {
     ...mapState({
-      tags: state => state.tab.tabsList
+      tags: state => state.tab.tabsList,
+      currentMenu: state => state.tab.currentMenu
     })
   },
   data() {
@@ -37,14 +38,25 @@ export default {
     }),
     handleClose(tag) {
       //this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1);
+
       this.close(tag)
+      console.log('tag', tag)
       const num = this.tags.length
       const beforepath = this.tags[num - 1]
-      this.$router.push({ name: beforepath.name })
+      const currentmenu = this.currentMenu
+      //this.$store.commit('tab/changeCurrentMenu', beforepath)
+      console.log(currentmenu)
+      if (currentmenu === tag) {
+        this.$router.push({ name: beforepath.name })
+      } else {
+        currentmenu === beforepath ? this.$router.push({ name: beforepath.name }) : this.$router.push({ name: currentmenu.name })
+      }
+      this.$store.commit('tab/changeCurrentMenu', currentmenu)
     },
     changeMenu(item) {
       this.$router.push({ name: item.name })
       this.$store.commit('tab/selectMenu', item)
+      console.log('item', item)
     }
   }
 }

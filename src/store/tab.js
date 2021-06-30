@@ -8,6 +8,10 @@ export default {
     tabsList: [{ path: '/', name: 'home', label: '首页', icon: 'home' }]
   },
   mutations: {
+    //改变currentmenu
+    changeCurrentMenu(state, val) {
+      state.currentMenu = val
+    },
     setMenu(state, val) {
       state.menu = val
       Cookie.set('menu', JSON.stringify(val))
@@ -67,6 +71,8 @@ export default {
       let result = state.tabsList.findIndex(item => item.name === val.name)
       state.tabsList.splice(result, 1)
       Cookie.set('tagList', JSON.stringify(state.tabsList))
+      console.log('tablist', state.tabsList)
+      console.log('current', state.currentMenu)
     },
     collapseMenu(state) {
       state.isCollapse = !state.isCollapse
