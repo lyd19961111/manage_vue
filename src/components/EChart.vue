@@ -1,4 +1,5 @@
 <template>
+  <!-- 图表组件 -->
   <div style="height: 100%" ref="echart">
     echart
   </div>
@@ -47,26 +48,31 @@ export default {
     return {
       echart: null,
       axisOption: {
-        legend: { //图例组件
-          textStyle: { //文本颜色
+        legend: {
+          //图例组件
+          textStyle: {
+            //文本颜色
             color: '#333'
           }
         },
         grid: {
           left: '20%'
         },
-        tooltip: { //悬浮显示
-          trigger: 'axis'  //坐标轴触发
+        tooltip: {
+          //悬浮显示
+          trigger: 'axis' //坐标轴触发
         },
         xAxis: {
           type: 'category',
           data: [],
-          axisLine: { 
-            lineStyle: { //x坐标轴线的颜色
+          axisLine: {
+            lineStyle: {
+              //x坐标轴线的颜色
               color: '#17b3a3'
             }
           },
-          axisLabel: { //x轴文本颜色
+          axisLabel: {
+            //x轴文本颜色
             color: '#333'
           }
         },
@@ -74,7 +80,8 @@ export default {
           {
             type: 'value',
             axisLine: {
-              lineStyle: {  //y坐标轴线的颜色
+              lineStyle: {
+                //y坐标轴线的颜色
                 color: '#17b3a3'
               }
             }
@@ -101,12 +108,16 @@ export default {
           '#7eb00a',
           '#6f5553',
           '#c14089'
-        ],//颜色选择
+        ], //颜色选择
         series: []
       },
       normalOption: {
         tooltip: {
           trigger: 'item'
+        },
+        legend: {
+          orient: 'vertical',
+          left: 'left'
         },
         color: ['#0f78f4', '#dd536b', '#9462e5', '#a6a6a6', '#e1bb22', '#39c362', '#3ed1cf'],
         series: []

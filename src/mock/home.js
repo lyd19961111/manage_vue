@@ -127,48 +127,48 @@ export default {
             totalBuy: Mock.Random.float(40000, 1000000, 0, 2)
           }
         ],
-        countDATA:[
+        countDATA: [
           {
-            name:'今日支付订单',
-            value:Mock.Random.float(100, 1000, 0, 2),
-            icon:'success',
-            color:'#2ec7c9'
+            name: '今日支付订单',
+            value: Mock.Random.float(100, 1000, 0, 2),
+            icon: 'success',
+            color: '#2ec7c9'
           },
           {
-            name:'今日收藏订单',
-            value:Mock.Random.float(100, 1000, 0, 2),
-            icon:'success',
-            color:'#ffb980'
+            name: '今日收藏订单',
+            value: Mock.Random.float(100, 1000, 0, 2),
+            icon: 'success',
+            color: '#ffb980'
           },
           {
-            name:'今日未支付订单',
-            value:Mock.Random.float(100, 1000, 0, 2),
-            icon:'s-goods',
-            color:'#5ab1ef'
+            name: '今日未支付订单',
+            value: Mock.Random.float(100, 1000, 0, 2),
+            icon: 's-goods',
+            color: '#5ab1ef'
           },
           {
-            name:'本月支付订单',
-            value:Mock.Random.float(100, 1000, 0, 2),
-            icon:'success',
-            color:'#2ec7c9'
+            name: '本月支付订单',
+            value: Mock.Random.float(100, 1000, 0, 2),
+            icon: 'success',
+            color: '#2ec7c9'
           },
           {
-            name:'本月收藏订单',
-            value:Mock.Random.float(100, 1000, 0, 2),
-            icon:'success',
-            color:'#ffb980'
+            name: '本月收藏订单',
+            value: Mock.Random.float(100, 1000, 0, 2),
+            icon: 'success',
+            color: '#ffb980'
           },
           {
-            name:'本月未支付订单',
-            value:Mock.Random.float(100, 1000, 0, 2),
-            icon:'success',
-            color:'#5ab1ef'
-          },
+            name: '本月未支付订单',
+            value: Mock.Random.float(100, 1000, 0, 2),
+            icon: 'success',
+            color: '#5ab1ef'
+          }
         ],
         //随机姓名
-        username:Mock.Random.first(),
+        username: Mock.Random.first(),
         //随机时间
-        time:Mock.Random.date('yyyy-MM-dd')       
+        time: Mock.Random.date('yyyy-MM-dd')
       }
     }
   }

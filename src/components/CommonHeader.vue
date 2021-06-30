@@ -1,15 +1,13 @@
 <template>
+  <!-- 头部 -->
   <header>
     <div class="l-content">
-      <el-button plain type="primary" icon="el-icon-menu" size="mini" @click="collapseMenu" ></el-button>
+      <el-button plain type="primary" icon="el-icon-menu" size="mini" @click="collapseMenu"></el-button>
       <el-breadcrumb separator="/">
         <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
         <el-breadcrumb-item :to="current.path" v-if="current">
-          {{current.label}}
-          <!-- <router-link >{{current.label}}</router-link> -->
-          <!-- <a href="/">{{current.label}}</a> -->
+          {{ current.label }}
         </el-breadcrumb-item>
-         <!-- <el-breadcrumb-item><a href="/">11</a></el-breadcrumb-item> -->
       </el-breadcrumb>
     </div>
     <div class="r-content">
@@ -29,29 +27,29 @@
 <script>
 import { mapState } from 'vuex'
 export default {
-    computed:{
-        ...mapState({
-            current:state=>state.tab.currentMenu
-        })
-    },
+  computed: {
+    ...mapState({
+      current: state => state.tab.currentMenu
+    })
+  },
   data() {
     return {
-      userImg: require("../assets/img/user.png"),
-    };
+      isCollapse: false,
+      userImg: require('../assets/img/user.png')
+    }
   },
-  methods:{
-    collapseMenu(){
-    this.$store.commit('tab/collapseMenu')
-  },
-  logOut(){
-    this.$store.commit('clearToken')
-    this.$store.commit('clearMenu')
-    //location.reload()
-    this.$router.push({path:'/login'})
+  methods: {
+    collapseMenu() {
+      this.$store.commit('tab/collapseMenu')
+    },
+    logOut() {
+      this.$store.commit('clearToken')
+      this.$store.commit('clearMenu')
+      //location.reload()
+      this.$router.push({ path: '/login' })
+    }
   }
-  }
-
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -61,12 +59,12 @@ header {
   align-items: center;
   justify-content: space-between;
 }
-.l-content{ 
-    display: flex;
-    align-items: center;
-    .el-button{
-        margin-right: 20px;
-    }
+.l-content {
+  display: flex;
+  align-items: center;
+  .el-button {
+    margin-right: 20px;
+  }
 }
 .r-content {
   .user {
@@ -78,16 +76,15 @@ header {
 </style>
 
 <style lang="scss">
-.el-breadcrumb__item{
-  .el-breadcrumb__inner{
-    color:#666666;
+.el-breadcrumb__item {
+  .el-breadcrumb__inner {
+    color: #666666;
     font-weight: normal;
   }
-  &:last-child{
-    .el-breadcrumb__inner{
-      color:#fff;
+  &:last-child {
+    .el-breadcrumb__inner {
+      color: #fff;
     }
   }
-  
 }
 </style>

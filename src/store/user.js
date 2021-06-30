@@ -1,21 +1,21 @@
-import Cookie from 'js-cookie'
-export default{
-    namespaced: true,
-    state:{
-        token:''
+//import Cookie from 'js-cookie'
+export default {
+  namespaced: true,
+  state: {
+    token: ''
+  },
+  mutations: {
+    setToken(state, val) {
+      state.token = val
+      sessionStorage.setItem('token', val)
     },
-    mutations:{
-        setToken(state,val){
-            state.token=val
-            Cookie.set('token',val)
-        },
-        clearToken(state){
-            state.token=''
-        Cookie.remove('token')
-        },
-        getToken(state){
-            state.token=Cookie.get('token') 
-        }
+    clearToken(state) {
+      state.token = ''
+      sessionStorage.remove('token')
     },
-    actions:{}
+    getToken(state) {
+      state.token = sessionStorage.getItem('token')
+    }
+  },
+  actions: {}
 }
