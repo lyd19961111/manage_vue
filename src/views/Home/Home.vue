@@ -13,7 +13,7 @@
           <p>
             上次登陆时间:<span>{{ data }}</span>
           </p>
-          <p>上次登陆地点:<span>杭州</span></p>
+          <p>上次登陆地点:<span>浙江杭州</span></p>
         </div>
       </el-card>
 
